@@ -3,12 +3,12 @@ class Solution {
         String newString = "";
         
         for (Character c : s.toCharArray()) {
-            if (Character.isLetterOrDigit(c)) {
+            if (Character.isDigit(c) || Character.isLetter(c)) {
                 newString += c;
             }
         }
        
-        newString.toLowerCase();
+        newString = newString.toLowerCase();
         int l = 0;
         int r = newString.length()-1;
 
@@ -16,8 +16,8 @@ class Solution {
             if (newString.charAt(l) != newString.charAt(r)) {
                 return false;
             }
-            l++;
-            r--;
+            l+=1;
+            r-=1;
         }
         return true;
     }
